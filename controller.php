@@ -3,10 +3,10 @@
 $kick = $_POST[kick];
 $block = $_POST[block];
 
-$host='mysql.hostinger.com.ua'; 
-$database='u417571785_wp';
-$user='u417571785_wp';
-$pswd='zT7Ept3Dfd';
+$host='xxx'; 
+$database='xxx';
+$user='xxx';
+$pswd='xxx';
 
 define("YOUR_DEFAULT_HP", 35);
 define("AIS_DEFAULT_HP", 35);
