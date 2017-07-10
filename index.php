@@ -2,9 +2,10 @@
 <html>
  <head>
   <meta charset="utf-8">
-  <title>MMORPG v.0.1</title>
+  <title>MMORPG v.0.3</title>
   <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js' type='text/javascript'></script>
   <script>
+
   	function send()
   	{
   			
@@ -15,12 +16,14 @@
                   success: function(html) {
                           $("#result").empty();
                           $("#result").append(html);
+                          var snd = new Audio("sword.mp3"); // buffers automatically when created
+                          snd.play();
                   }
           });
           $("input:radio").attr("checked", false);
   	}
 
-    function potion()
+    function updhp()
     {
         
           $.ajax({
@@ -30,6 +33,8 @@
                   success: function(html) {
                           $("#result").empty();
                           $("#result").append(html);
+                          var snd = new Audio("potion.mp3"); // buffers automatically when created
+                          snd.play();
                   }
           });
           $("input:radio").attr("checked", false);
@@ -38,7 +43,7 @@
  </head>
  <body>
 
- <div id="wrapper" style="margin: 30px;">
+ <div id="wrapper" style="margin: 30px;float: left;width: 30%;">
  <form action="" id="myform">
   <p><b>Куда бьем соперника?</b></p>
   <input type="radio" name="kick" value="kick-in-head" id="kick-in-head">В голову<Br>
@@ -50,11 +55,14 @@
   <input type="radio" name="block" value="block-legs" id="block-legs">Защищаем ноги</p>
   <input onclick="send()" type="button" value="Сделать ход"></p>
  </form>
- <!--<form action="" id="potion">
+ <form action="" id="potion">
   <input type="hidden" name="potion" value="potion">
-  <input onclick="potion()" type="button" value="Take a potion"></p>
- </form>-->
+  <input onclick="updhp()" type="button" value="Принять зелье"></p>
+ </form>
  <div id="result"></div>
+ </div>
+ <div style="float: left;margin-top: 30px;">
+ 	<img src="images/img2.png">
+ </div>
  </body>
-</div>
 </html>
